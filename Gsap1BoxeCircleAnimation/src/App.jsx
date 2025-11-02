@@ -15,7 +15,7 @@ const App = () => {
   });
   useGSAP(() => {
     gsap.to(circleRef.current, {
-      delay: 3,
+      delay: 2.5,
       duration: 3,
       rotateZ: 450,
       x: 200,
@@ -33,13 +33,13 @@ const App = () => {
         <div className="flex flex-row justify-center items-center">
           <div
             ref={boxRef}
-            className="h-32 w-32 bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 rounded-3xl border-2 border-blue-400 flex justify-center items-center">
+            className="h-32 w-32 bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 rounded-3xl border-3 border-white flex justify-center items-center">
             <h1 className="text-white text-3xl font-bold">1</h1>
           </div>
 
           <div
             ref={circleRef}
-            className="h-32 w-32 bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 rounded-full border-2 border-blue-400 flex justify-center items-center">
+            className="h-32 w-32 bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 rounded-full border-3 border-white flex justify-center items-center">
             <h1 className="text-white text-3xl font-bold">2</h1>
           </div>
         </div>
