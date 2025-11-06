@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import "./index.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const mainContainerRef = useRef();
+  const pointerRef = useRef();
+
+  const mouseMovedOnPage = (e) => {
+    const event = e.nativeEvent;
+    gsap.to(pointerRef.current, {
+      x: event.x,
+      y: event.y,
+      duration: 1,
+      ease: "back.out",
+    });
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div
+        ref={pointerRef}
+        className="h-4 w-4 bg-white rounded-full fixed"></div>
+      <div
+        onMouseMove={mouseMovedOnPage}
+        className="bg-black h-screen w-full"></div>
+      <div
+        onMouseMove={mouseMovedOnPage}
+        className="h-screen w-full bg-blue-500"></div>
     </>
-  )
-}
-
-export default App
+  );
+};
+export default App;
