@@ -34,7 +34,7 @@ const App = () => {
   };
 
   const handleMouseMoved = (dets) => {
-    // console.log(dets.clientX);
+    console.log(dets.nativeEvent);
     const svgPos = mainContainerRef.current.getBoundingClientRect();
     const newXvalue = dets.clientX - svgPos.left;
     const newYvalue = dets.clientY - svgPos.top;
@@ -43,6 +43,16 @@ const App = () => {
       attr: { d: `M 10 200 Q ${newXvalue} ${newYvalue} 1390 200` },
       duration: 0.3,
     });
+
+    //One more way But Not Much Preferrable
+    //Here by using the nativeEvent we got the x and y coordinates easily
+
+    // gsap.to(mainPathRef.current, {
+    //   attr: {
+    //     d: `M 10 200 Q ${dets.nativeEvent.x} ${dets.nativeEvent.y} 1390 200`,
+    //   },
+    //   duration: 0.2,
+    // });
   };
 
   return (
