@@ -1,41 +1,57 @@
-import React, { useRef } from "react";
+// App.jsx
+import { useRef, useState } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
-const App = () => {
-  const cursorRef = useRef();
-  const textRef = useRef();
-  const mouseMovedEvent = (event) => {
-    const eve = event.nativeEvent;
-    gsap.to(cursorRef.current, {
-      x: eve.x,
-      y: eve.y,
+export default function App() {
+  const mainRef = useRef();
+  const maskRef = useRef();
+  const [hover, setHover] = useState(false);
+
+  const size = hover ? 400 : 40;
+
+  const handleMouseMove = (e) => {
+    gsap.to(maskRef.current, {
+      webkitMaskPosition: `${e.clientX - size / 2}px ${e.clientY - size / 2}px`,
+      webkitMaskSize: `${size}px`,
       duration: 0.3,
-      ease: "power.out",
+      ease: "power3.out",
     });
   };
-  const mouseMovedTextEvent = () => {
-    gsap.to(textRef.current, {
-      scale: 2,
-    });
-  };
+
   return (
     <main
-      className="bg-black h-screen w-full text-center"
-      onMouseMove={mouseMovedEvent}>
+      ref={mainRef}
+      onMouseMove={handleMouseMove}
+      className="bg-black h-screen w-full overflow-hidden relative">
+      {/* masked content */}
       <div
-        ref={cursorRef}
-        className="h-10 w-10 bg-orange-700 rounded-full"></div>
-      <div
-        className=" h-full w-full flex flex-row justify-center items-center"
-        onMouseMove={mouseMovedTextEvent}>
-        <h1 ref={textRef} className="text-5xl text-white font-bold w-[70vw]">
+        ref={maskRef}
+        className="h-full w-full flex justify-center items-center text-4xl leading-normal absolute top-0 left-0 bg-[#f1432c] text-black"
+        style={{
+          WebkitMaskImage: "url(/mask.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskPosition: "50% 50%",
+          WebkitMaskSize: `${size}px`,
+        }}>
+        <p
+          className="w-[70%]"
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}>
           I don’t chase trends; I chase understanding. Curiosity drives me to
           break limits, master complexity, and build solutions that genuinely
           move things forward.
-        </h1>
+        </p>
+      </div>
+
+      {/* base content behind mask */}
+      <div className="h-full w-full flex justify-center items-center text-amber-100 text-4xl leading-normal cursor-default">
+        <p className="w-[70%]">
+          I don’t follow paths;{" "}
+          <span className="text-[#f1432c]">I create them.</span> Logic drives me
+          to dissect problems, craft innovation, and engineer ideas that truly
+          make an impact.
+        </p>
       </div>
     </main>
   );
-};
-export default App;
+}
