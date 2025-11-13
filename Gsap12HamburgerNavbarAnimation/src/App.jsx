@@ -19,7 +19,7 @@ const App = () => {
     tl.current = gsap.timeline();
     tl.current.to(navBarRef.current, {
       right: 0,
-      duration: 0.9,
+      duration: 0.5,
     });
     tl.current.from("h2", {
       x: 150,
