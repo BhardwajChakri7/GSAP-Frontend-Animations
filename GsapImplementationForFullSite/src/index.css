@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@font-face {
+  font-family: chakri;
+  src: url(./assets/3856NeueMachina.woff2);
+}
+* {
+  box-sizing: border-box;
+  font-family: chakri;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+}
