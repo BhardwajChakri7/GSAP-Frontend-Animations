@@ -66,8 +66,96 @@ const App = () => {
             iste enim! Voluptatibus quibusdam facilis non est?
           </p>
         </div>
-        <div className="h-[80%] w-full px-14 py-2">
-          <div className="h-[35%] w-[40%] bg-black"></div>
+        <div className="h-[80%] w-full px-14 py-2 flex flex-wrap justify-between mt-7">
+          <div className="h-[43%] w-[49%] border-2 rounded-[30px] shrink-0 shadow-[0px_15px_0px_black] p-11 flex justify-between">
+            <div className="flex flex-col h-full justify-between">
+              <h1 className="text-2xl font-bold leading-tight">
+                <span className="bg-[#9AE975] px-2 py-1 rounded-[3px]">
+                  Search Engine
+                </span>
+                <br />
+                <span className="bg-[#9AE975] px-2 py-1 rounded-[3px]">
+                  Optimization
+                </span>
+              </h1>
+              <button className="flex items-center gap-5 mt-5 bg-transparent cursor-pointer text-xl font-bold">
+                <i className="ri-arrow-right-up-line text-2xl h-10 w-10 bg-black text-white rounded-full flex items-center justify-center"></i>
+                Learn more
+              </button>
+            </div>
+            <img
+              src="./seo.jpg"
+              alt="SEO Graphic"
+              className="h-full scale-125"
+            />
+          </div>
+          <div className="bg-black h-[43%] w-[49%] border-2 rounded-[30px] shrink-0 shadow-[0px_15px_0px_black] p-11 flex justify-between">
+            <div className="flex flex-col h-full justify-between">
+              <h1 className="text-2xl font-bold leading-tight">
+                <span className="bg-[#ffffff] px-2 py-1 rounded-[3px]">
+                  Pay per click
+                </span>
+                <br />
+                <span className="bg-[#ffffff] px-2 py-1 rounded-[3px]">
+                  Advertisement
+                </span>
+              </h1>
+
+              <button className="flex items-center gap-5 mt-5 bg-transparent cursor-pointer text-xl font-bold text-white">
+                <i className="ri-arrow-right-up-line text-2xl h-10 w-10 bg-white text-black rounded-full flex items-center justify-center"></i>
+                Learn more
+              </button>
+            </div>
+            <img
+              src="./ppc.jpeg"
+              alt="PPC Graphic"
+              className="h-full scale-105 invert"
+            />
+          </div>
+          <div className="bg-black h-[43%] w-[49%] border-2 rounded-[30px] shrink-0 shadow-[0px_15px_0px_black] p-11 flex justify-between">
+            <div className="flex flex-col h-full justify-between">
+              <h1 className="text-2xl font-bold leading-tight">
+                <span className="bg-[#ffffff] px-2 py-1 rounded-[3px]">
+                  Social Media
+                </span>
+                <br />
+                <span className="bg-[#ffffff] px-2 py-1 rounded-[3px]">
+                  Marketing
+                </span>
+              </h1>
+              <button className="flex items-center gap-5 mt-5 bg-transparent cursor-pointer text-xl font-bold text-white">
+                <i className="ri-arrow-right-up-line text-2xl h-10 w-10 bg-white text-black rounded-full flex items-center justify-center"></i>
+                Learn more
+              </button>
+            </div>
+            <img
+              src="./social.jpeg"
+              alt="Social Media Graphic"
+              className="h-full scale-155 invert rounded-2xl"
+            />
+          </div>
+          <div className="h-[43%] w-[49%] border-2 rounded-[30px] shrink-0 shadow-[0px_15px_0px_black] p-11 flex justify-between">
+            <div className="flex flex-col h-full justify-between">
+              <h1 className="text-2xl font-bold leading-tight">
+                <span className="bg-[#9AE975] px-2 py-1 rounded-[3px]">
+                  E-mail
+                </span>
+                <br />
+                <span className="bg-[#9AE975] px-2 py-1 rounded-[3px]">
+                  Marketing
+                </span>
+              </h1>
+              <button className="flex items-center gap-5 mt-5 bg-transparent cursor-pointer text-xl font-bold text-black">
+                <i className="ri-arrow-right-up-line text-2xl h-10 w-10 bg-black text-white rounded-full flex items-center justify-center"></i>
+                Learn more
+              </button>
+            </div>
+            <img
+              src="./email.png"
+              alt="Email Graphic"
+              className="h-full scale-125"
+            />
+          </div>
         </div>
       </section>
     </>
