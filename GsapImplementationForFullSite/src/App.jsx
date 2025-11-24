@@ -188,6 +188,61 @@ const App = () => {
         end: "top 50%",
       },
     });
+    tl5.from(caseStudyRef.current.querySelectorAll("h1,p"), {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+    });
+    const tl6 = gsap.timeline({
+      scrollTrigger: {
+        trigger: caseStudyBoxRef.current,
+        scroller: "body",
+        // markers: true,
+        start: "top 80%",
+        end: "top 40%",
+        scrub: 2,
+      },
+    });
+    tl6.from(caseStudyBoxRef.current, {
+      opacity: 0,
+      y: 80,
+      // filter: "blur(20px)",
+      duration: 2,
+      ease: "power3.out",
+    });
+    tl6.from(caseStudyBoxRef.current.querySelectorAll(".content1"), {
+      opacity: 0,
+      y: 40,
+      filter: "blur(10px)",
+      duration: 1,
+      stagger: 0.15,
+      ease: "power2.out",
+    });
+    tl6.from(caseStudyBoxRef.current.querySelectorAll(".line1"), {
+      opacity: 0,
+      scale: 0,
+    });
+    tl6.from(caseStudyBoxRef.current.querySelectorAll(".content2"), {
+      opacity: 0,
+      y: 40,
+      filter: "blur(10px)",
+      duration: 1,
+      stagger: 0.15,
+      ease: "power2.out",
+    });
+    tl6.from(caseStudyBoxRef.current.querySelectorAll(".line2"), {
+      opacity: 0,
+      scale: 0,
+    });
+    tl6.from(caseStudyBoxRef.current.querySelectorAll(".content3"), {
+      opacity: 0,
+      y: 40,
+      filter: "blur(10px)",
+      duration: 1,
+      stagger: 0.15,
+      ease: "power2.out",
+    });
   });
   return (
     <>
