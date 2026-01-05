@@ -181,7 +181,7 @@ const App = () => {
       scrollTrigger: {
         trigger: caseStudyRef.current,
         scroller: "body",
-        // markers: true,
+        markers: true,
         yoyo: true,
         start: "top 70%",
         scrub: 2,
